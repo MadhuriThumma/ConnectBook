@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ConnectBook - Digital Address Book</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- AUTHENTICATION SECTION -->
+    <section id="authSection">
+
+        <!-- LEFT BRANDING PANEL -->
+        <div class="auth-visual">
+
+            <div class="brand">
+                <div class="brand-icon">C</div>
+                <h1>ConnectBook</h1>
+            </div>
+
+            <div class="visual-content">
+
+                <span class="welcome-label">
+                    YOUR PERSONAL CONTACT MANAGER
+                </span>
+
+                <h2>
+                    Every Connection,<br>
+                    Organized.
+                </h2>
+
+                <p>
+                    Keep your important people close.
+                    Manage personal, family, friends and
+                    professional contacts in one simple place.
+                </p>
+
+                <!-- CONTACT NETWORK ILLUSTRATION -->
+                <div class="illustration">
+
+                    <div class="connection-line line-one"></div>
+                    <div class="connection-line line-two"></div>
+                    <div class="connection-line line-three"></div>
+                    <div class="connection-line line-four"></div>
+
+                    <div class="illustration-card card-one">
+                        <span>👤</span>
+                    </div>
+
+                    <div class="illustration-card card-two">
+                        <span>👥</span>
+                    </div>
+
+                    <div class="illustration-card card-three">
+                        <span>💼</span>
+                    </div>
+
+                    <div class="illustration-card card-four">
+                        <span>♡</span>
+                    </div>
+
+                    <div class="illustration-center">
+                        CB
+                    </div>
+
+                </div>
+
+            </div>
+
+            <p class="visual-footer">
+                One place for all your connections.
+            </p>
+
+        </div>
+
+
+        <!-- RIGHT LOGIN PANEL -->
+        <div class="auth-panel">
+
+            <div class="auth-card">
+
+                <!-- MOBILE BRANDING -->
+                <div class="mobile-brand">
+
+                    <div class="brand-icon">C</div>
+
+                    <span>ConnectBook</span>
+
+                </div>
+
+
+                <!-- LOGIN HEADING -->
+                <div class="auth-heading">
+
+                    <span class="auth-small-title">
+                        WELCOME TO CONNECTBOOK
+                    </span>
+
+                    <h2 id="authTitle">
+                        Welcome Back
+                    </h2>
+
+                    <p>
+                        Enter your details to access your account.
+                    </p>
+
+                </div>
+
+
+                <!-- LOGIN / REGISTRATION FORM -->
+                <form id="authForm">
+
+                    <!-- NAME FIELD -->
+                    <input
+                        type="text"
+                        id="authName"
+                        placeholder="Enter your full name"
+                        style="display: none;"
+                    >
+
+                    <!-- EMAIL FIELD -->
+                    <div class="form-group">
+
+                        <label for="authEmail">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="authEmail"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- PASSWORD FIELD -->
+                    <div class="form-group">
+
+                        <label for="authPassword">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="authPassword"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- SUBMIT BUTTON -->
+                    <button type="submit" id="authSubmit">
+                        Login
+                    </button>
+
+                </form>
+
+
+                <!-- AUTHENTICATION MESSAGE -->
+                <p id="authMessage"></p>
+
+
+                <!-- DIVIDER -->
+                <div class="auth-divider">
+                    <span>SECURE CONTACT MANAGEMENT</span>
+                </div>
+
+
+                <!-- REGISTER / LOGIN SWITCH -->
+                <p id="authSwitch">
+
+                    Don't have an account?
+
+                    <button type="button" id="switchAuth">
+                        Register
+                    </button>
+
+                </p>
+
+
+                <p class="auth-terms">
+                    Your connections, organized securely.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- MAIN APPLICATION -->
+    <main id="appSection" style="display: none;">
+        <!-- TOAST NOTIFICATION -->
+<div id="toastNotification" class="toast-notification">
+    <span id="toastMessage"></span>
+</div>
+
+    <div class="app-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="app-sidebar">
+
+            <div class="sidebar-brand">
+                <div class="brand-icon">C</div>
+                <h2>ConnectBook</h2>
+            </div>
+
+            <p class="sidebar-label">MAIN MENU</p>
+
+            <nav class="sidebar-nav">
+
+                <a href="#dashboardSection" class="nav-link active">
+                    <span>▦</span> Dashboard
+                </a>
+
+                <a href="#contactsSection" class="nav-link">
+                    <span>▣</span> All Contacts
+                </a>
+
+                <a href="#contactsSection" class="nav-link">
+                    <span>♡</span> Favorites
+                </a>
+
+                <a href="#contactsSection" class="nav-link">
+                    <span>◈</span> Categories
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+                <p>YOUR CONTACTS,</p>
+                <p>ALL IN ONE PLACE.</p>
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <div class="app-main">
+
+            <!-- TOP BAR -->
+            <header class="app-topbar">
+
+                <div>
+                    <p class="topbar-label">WORKSPACE</p>
+                    <h2>Dashboard</h2>
+                </div>
+
+                <div class="topbar-user">
+                    <span id="welcomeMessage">Welcome!</span>
+                    <button id="logoutBtn" type="button">Logout</button>
+                </div>
+
+            </header>
+
+
+            <div class="app-content">
+
+                <!-- DASHBOARD ANALYTICS -->
+                <section id="dashboardSection" class="dashboard-section">
+
+                    <div class="section-heading">
+                        <div>
+                            <h2>Overview</h2>
+                            <p>Here's what's happening with your contacts.</p>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-container">
+
+                        <div class="dashboard-card">
+                            <div class="stat-icon">▣</div>
+                            <p>Total Contacts</p>
+                            <h2 id="totalContacts">0</h2>
+                        </div>
+
+                        <div class="dashboard-card">
+                            <div class="stat-icon">♙</div>
+                            <p>Personal Contacts</p>
+                            <h2 id="personalContacts">0</h2>
+                        </div>
+
+                        <div class="dashboard-card">
+                            <div class="stat-icon">▤</div>
+                            <p>Work Contacts</p>
+                            <h2 id="workContacts">0</h2>
+                        </div>
+
+                        <div class="dashboard-card">
+                            <div class="stat-icon">♡</div>
+                            <p>Favorite Contacts</p>
+                            <h2 id="favoriteContacts">0</h2>
+                        </div>
+
+                    </div>
+                    <div class="analytics-card">
+    <div class="analytics-heading">
+        <h3>Contact Category Analytics</h3>
+        <p>Understand how your contacts are distributed.</p>
+    </div>
+
+    <div id="categoryChart">
+        <!-- Category chart will appear here -->
+    </div>
+</div>
+<!-- RECENT CONTACTS -->
+<div class="recent-contacts-card">
+
+    <div class="recent-contacts-heading">
+        <div>
+            <h3>Recent Contacts</h3>
+            <p>Your latest added connections</p>
+        </div>
+    </div>
+
+    <div id="recentContactsList">
+        <!-- Recent contacts will appear here -->
+    </div>
+
+</div>
+
+                </section>
+
+
+                <!-- ADD CONTACT -->
+                <section class="contact-form-section">
+
+                    <div class="section-heading">
+                        <div>
+                            <h2>Add New Contact</h2>
+                            <p>Save an important connection to your address book.</p>
+                        </div>
+                    </div>
+
+                   <form id="contactForm">
+
+    <div class="form-grid">
+
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter full name"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input
+                type="tel"
+                id="phone"
+                placeholder="Enter phone number"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter email address"
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="category">Category</label>
+            <select id="category" required>
+                <option value="">Select Category</option>
+                <option value="Personal">Personal</option>
+                <option value="Work">Work</option>
+                <option value="Family">Family</option>
+                <option value="Friends">Friends</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        
+    </div>
+
+    <button type="submit" class="add-contact-btn">
+        + Add Contact
+    </button>
+
+</form>
+                </section>
+
+
+                <!-- CONTACT LIST -->
+                <section id="contactsSection" class="contact-list-section">
+
+                    <div class="section-heading">
+                        <div>
+                            <h2>Your Contacts</h2>
+                            <p>Manage and organize your connections.</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-toolbar">
+
+                        <input
+                            type="text"
+                            id="search"
+                            placeholder="Search by name, phone or email..."
+                        >
+
+                        <select id="categoryFilter">
+                            <option value="all">All Categories</option>
+                            <option value="Personal">Personal</option>
+                            <option value="Work">Work</option>
+                            <option value="Family">Family</option>
+                            <option value="Friends">Friends</option>
+                            <option value="Other">Other</option>
+                        </select>
+
+                    </div>
+
+                    <div class="contact-tabs">
+
+                        <button id="allContactsBtn" type="button" class="active">
+                            All Contacts
+                        </button>
+
+                        <button id="favoritesBtn" type="button">
+                            ♡ Favorites
+                        </button>
+
+                    </div>
+
+                    <div id="contactsContainer"></div>
+
+                </section>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- CONTACT DETAILS MODAL -->
+<div id="contactModal" class="contact-modal">
+    <div class="contact-modal-content">
+
+        <button type="button" id="closeContactModal" class="modal-close">
+            &times;
+        </button>
+
+        <div class="modal-avatar" id="modalAvatar">CB</div>
+
+        <h2 id="modalName">Contact Name</h2>
+
+        <span id="modalCategory" class="category-badge">
+            Category
+        </span>
+
+        <div class="modal-details">
+            <p><strong>Phone:</strong> <span id="modalPhone"></span></p>
+            <p><strong>Email:</strong> <span id="modalEmail"></span></p>
+            <p><strong>Added on:</strong> <span id="modalDate"></span></p>
+            <p><strong>Favorite:</strong> <span id="modalFavorite"></span></p>
+        </div>
+
+    </div>
+</div>
+<!-- DELETE CONFIRMATION MODAL -->
+<div id="deleteContactModal" class="contact-modal">
+
+    <div class="contact-modal-content delete-modal-content">
+
+        <div class="delete-icon">!</div>
+
+        <h2>Delete Contact?</h2>
+
+        <p>
+            Are you sure you want to delete
+            <strong id="deleteContactName"></strong>?
+            This action cannot be undone.
+        </p>
+
+        <div class="edit-modal-actions">
+
+            <button type="button" id="cancelDeleteBtn">
+                Cancel
+            </button>
+
+            <button type="button" id="confirmDeleteBtn">
+                Delete
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- EDIT CONTACT MODAL -->
+<div id="editContactModal" class="contact-modal">
+
+    <div class="contact-modal-content edit-modal-content">
+
+        <button type="button" id="closeEditModal" class="modal-close">
+            &times;
+        </button>
+
+        <h2>Edit Contact</h2>
+        <p class="edit-modal-subtitle">Update your contact information.</p>
+
+        <form id="editContactForm">
+
+            <div class="form-group">
+                <label for="editName">Full Name</label>
+                <input type="text" id="editName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="editPhone">Phone Number</label>
+                <input type="tel" id="editPhone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="editEmail">Email Address</label>
+                <input type="email" id="editEmail">
+            </div>
+
+            <div class="form-group">
+                <label for="editCategory">Category</label>
+                <select id="editCategory" required>
+                    <option value="Personal">Personal</option>
+                    <option value="Friends">Friends</option>
+                    <option value="Work">Work</option>
+                    <option value="Family">Family</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="edit-modal-actions">
+                <button type="button" id="cancelEditBtn">Cancel</button>
+                <button type="submit">Save Changes</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+</main>
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
